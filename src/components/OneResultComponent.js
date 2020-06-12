@@ -4,10 +4,10 @@ const { Meta } = Card;
 
 function OneResultComponent(props) {
   return (
-    <Col span={6}>
+    <Col span={4}>
       <Card
         hoverable
-        style={{ width: 240 }}
+        style={{ width: 150 }}
         cover={<img alt="image comes here" src={props.obj.artworkUrl100} />}
       >
         <Meta
