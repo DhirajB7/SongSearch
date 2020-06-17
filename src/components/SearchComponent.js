@@ -1,16 +1,18 @@
 import React from "react";
-import { Input } from "antd";
+import { Input, Button } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
 function SearchComponent(props) {
   return (
-    <form onSubmit={props.buttonClicked}>
+    <div>
       <Input
         size="large"
         placeholder="Enter Text Here"
         onChange={props.searchChange}
         value={props.searchText}
       />
-    </form>
+      <Button icon={<SearchOutlined />} onClick={props.buttonClicked} />
+    </div>
   );
 }
 
