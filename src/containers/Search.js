@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchComponent from "../components/SearchComponent";
 import GetData from "../api/GetData";
 import Result from "./Result";
+import Spinner from "../common/Spinner";
 
 class Search extends Component {
   state = {
@@ -13,20 +14,28 @@ class Search extends Component {
 
   searchTextChanged = (event) => {
     this.setState({
-      textBoxValue: event.target.value,
+      textBoxValue: event.target.value.toUpperCase(),
     });
   };
 
   checkData = () => {
+    this.setState({
+      displayData: false,
+    });
     alert("INPUT DATA IS NOT CORRECT");
   };
 
   searchButtonClicked = () => {
+    this.setState({
+      displayData: true,
+      displayResult: false,
+    });
+
     GetData(this.state.textBoxValue).then((a) => {
-      a.resultCount > 0
+      a !== null
         ? this.setState({
-            displayData: true,
             displayResult: true,
+            displayData: false,
             data: a.results,
           })
         : this.checkData();
@@ -40,10 +49,10 @@ class Search extends Component {
           searchChange={this.searchTextChanged}
           buttonClicked={this.searchButtonClicked}
         />
-        {this.state.displayData ? (
-          this.state.displayResult ? (
-            <Result dataToResult={this.state.data} />
-          ) : null
+        {this.state.displayData ? <Spinner /> : null}
+
+        {this.state.displayResult ? (
+          <Result dataToResult={this.state.data} />
         ) : null}
       </div>
     );

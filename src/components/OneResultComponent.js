@@ -8,7 +8,7 @@ function OneResultComponent(props) {
       <Card
         hoverable
         style={{ width: 150 }}
-        cover={<img alt="image comes here" src={props.obj.artworkUrl100} />}
+        cover={<img alt="pic comes here" src={props.obj.artworkUrl100} />}
       >
         <Meta
           title={props.obj.trackName}

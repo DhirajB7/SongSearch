@@ -8,8 +8,8 @@ function ResultComponent(props) {
     return (
       <div>
         <Row>
-          {props.data.map((data) => {
-            return <OneResultComponent key={data.trackId} obj={data} />;
+          {props.data.map((element) => {
+            return <OneResultComponent key={element.trackId} obj={element} />;
           })}
         </Row>
       </div>
