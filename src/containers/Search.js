@@ -13,6 +13,7 @@ class Search extends Component {
   };
 
   searchTextChanged = (event) => {
+    event.preventDefault();
     this.setState({
       textBoxValue: event.target.value.toUpperCase(),
     });
@@ -26,10 +27,14 @@ class Search extends Component {
   };
 
   searchButtonClicked = () => {
+    console.log("1");
+
     this.setState({
       displayData: true,
       displayResult: false,
     });
+
+    console.log("2");
 
     GetData(this.state.textBoxValue).then((a) => {
       a !== null
@@ -40,6 +45,8 @@ class Search extends Component {
           })
         : this.checkData();
     });
+
+    console.log("3");
   };
 
   render() {

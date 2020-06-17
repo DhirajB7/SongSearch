@@ -6,7 +6,6 @@ function OneResultComponent(props) {
   return (
     <Col span={4}>
       <Card
-        hoverable
         style={{ width: 150 }}
         cover={<img alt="pic comes here" src={props.obj.artworkUrl100} />}
       >
