@@ -9,6 +9,7 @@ function SearchComponent(props) {
         size="large"
         placeholder="Enter Text Here"
         onChange={props.searchChange}
+        value={props.searchText.toUpperCase()}
       />
       <Button icon={<SearchOutlined />} onClick={props.buttonClicked} />
     </div>

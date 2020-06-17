@@ -48,6 +48,7 @@ class Search extends Component {
         <SearchComponent
           searchChange={this.searchTextChanged}
           buttonClicked={this.searchButtonClicked}
+          searchText={this.state.textBoxValue}
         />
         {this.state.displayData ? <Spinner /> : null}
 
