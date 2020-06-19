@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import ResultComponent from "../components/ResultComponent";
+import NoResults from "../common/NoResults";
 
-class Result extends Component {
-  render() {
-    return (
-      <div>
-        <ResultComponent data={this.props.dataToResult} />
-      </div>
-    );
-  }
+function Result(props) {
+  return (
+    <React.Fragment>
+      {props.toSearch.length > 0 ? (
+        <ResultComponent data={props.toSearch} />
+      ) : (
+        <NoResults />
+      )}
+    </React.Fragment>
+  );
 }
 
 export default Result;

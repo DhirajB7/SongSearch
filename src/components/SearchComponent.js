@@ -4,7 +4,7 @@ import { SearchOutlined } from "@ant-design/icons";
 
 function SearchComponent(props) {
   return (
-    <div>
+    <React.Fragment>
       <Input
         size="large"
         placeholder="Enter Text Here"
@@ -12,7 +12,7 @@ function SearchComponent(props) {
         value={props.searchText}
       />
       <Button icon={<SearchOutlined />} onClick={props.buttonClicked} />
-    </div>
+    </React.Fragment>
   );
 }
 
