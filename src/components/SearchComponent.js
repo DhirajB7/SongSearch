@@ -6,6 +6,7 @@ function SearchComponent(props) {
   return (
     <React.Fragment>
       <Input
+        id="search"
         size="large"
         placeholder="Enter Text Here"
         onChange={props.searchChange}
